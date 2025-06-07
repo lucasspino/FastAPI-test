@@ -1,7 +1,10 @@
+from dotenv import load_dotenv
+import os
 from pymongo import MongoClient
-
+load_dotenv()
+MONGO_URI = os.getenv("MONGO_URI")
 # base de datos local
 # db_client = MongoClient().local
 # BD Atlas
-URL = "mongodb+srv://lucaspino07:61D7wZSFfz3NeWR7@cluster0.bisbkqy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-db_client = MongoClient(URL).test
+
+db_client = MongoClient(MONGO_URI).test
